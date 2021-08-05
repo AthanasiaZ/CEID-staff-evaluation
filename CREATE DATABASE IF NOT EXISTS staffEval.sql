@@ -50,9 +50,41 @@ CREATE TABLE IF NOT EXISTS employees
 
 CREATE TABLE IF NOT EXISTS languages
 (
-    employee_username CHAR,
+    empl_username CHAR,
     language CHAR,
-    CONSTRAINT LANG FOREIGN KEY (employee_username) REFERENCES emploeyee(user_username)
+    CONSTRAINT LANG FOREIGN KEY (empl_username) REFERENCES emploeyee(user_username)
     ON DELETE CASCADE ON UPDATE CASCADE
 )
 
+CREATE TABLE IF NOT EXISTS degrees
+(
+    title CHAR,
+    institution CHAR,
+    empl_username CHAR,
+    grad_year INT(4),
+    grade INT,
+    PRIMARY KEY(title, institution),
+    CONSTRAINT EMPLDEGR FOREIGN KEY (empl_username) REFERENCES employee(user_username)
+    ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS projects
+(
+    description CHAR,
+    url CHAR,
+    num INT AUTO INCREMENT,
+    empl_username CHAR,
+    PRIMARY KEY (num, empl_username),
+    CONSTRAINT EMPLPROJ FOREIGN KEY (empl_username) REFERENCES employee(user_username)
+    ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS evaluators
+(   
+    empl_username CHAR,
+    comp_afm INT,
+    eval_number INT,
+    PRIMARY KEY (eval_number),
+    CONSTRAINT EMPLEVAL FOREIGN KEY (empl_username) REFERENCES employee(user_username)
+    ON DELETE CASCADE ON UPDATE CASCADE
+)
