@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS languages
 (
     empl_username CHAR,
     language CHAR,
-    CONSTRAINT LANG FOREIGN KEY (empl_username) REFERENCES emploeyee(user_username)
+    CONSTRAINT LANG FOREIGN KEY (empl_username) REFERENCES employee(user_username)
     ON DELETE CASCADE ON UPDATE CASCADE
 )
 
@@ -81,10 +81,17 @@ CREATE TABLE IF NOT EXISTS projects
 
 CREATE TABLE IF NOT EXISTS evaluators
 (   
-    empl_username CHAR,
+    eval_username CHAR,
     comp_afm INT,
     eval_number INT,
     PRIMARY KEY (eval_number),
-    CONSTRAINT EMPLEVAL FOREIGN KEY (empl_username) REFERENCES employee(user_username)
+    CONSTRAINT EMPLEVAL FOREIGN KEY (eval_username) REFERENCES users(username)
     ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS position
+(
+    announcement_date DATE,
+    expiration_date DATE,
+    
 )
