@@ -4,10 +4,10 @@ USE staffEval
 
 CREATE TABLE IF NOT EXISTS companies
 (
-    afm INT,
-    doy CHAR,
-    phone INT(10),      
-    street CHAR,        #  did not use separate table for edra to avoid unwanted complexity
+    'afm' INT,
+    'doy' CHAR,
+    'phone' INT(10),      
+    'street' CHAR,        #  did not use separate table for edra to avoid unwanted complexity
     street_num INT,
     city CHAR,
     country CHAR,
@@ -93,5 +93,10 @@ CREATE TABLE IF NOT EXISTS position
 (
     announcement_date DATE,
     expiration_date DATE,
-    
+
 )
+
+
+
+#BEGIN INSERT COMMANDS FOR DATABASE
+
