@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS staffEval
 
 USE staffEval
 
-CREATE TABLE IF NOT EXISTS company
+CREATE TABLE IF NOT EXISTS companies
 (
   afm char(9)
   , doy VARCHAR(15)
@@ -137,54 +137,48 @@ CREATE TABLE IF NOT EXISTS evaluator
 
 CREATE TABLE IF NOT EXISTS job
 (
-  ID INT(4)
-  , start_date DATE
-  , salary FLOAT(6,1)
-  , position VARCHAR(40)
-  , edra VARCHAR(45)
-  , evaluator VARCHAR(12)
-  , announceDate DATETIME
-  , submissionDate DATE
-  , PRIMARY KEY (ID_num)
-  , CONSTRAINT JOBEVAL
-  FOREIGN KEY (evaluator)
-  REFERENCES evaluator(username)
-  ON DELETE CASCADE
-  ON UPDATE CASCADE
+      'ID_num' INT,
+      'title' VARCHAR,
+      'street' VARCHAR,
+      'announcement_date' DATE,
+      'expiration_date' DATE,
+      PRIMARY KEY (ID_num)
 )
 
 CREATE TABLE IF NOT EXISTS antikeim
 (
-  title VARCHAR(36)
-  , descr TEXT
-  , belongs_to VARCHAR(36),
-  PRIMARY KEY (title)
-  , CONSTRAINT ANTIKANTIK
-  FOREIGN KEY (belongs_to)
-  REFERENCES antikeim(title)
-  ON DELETE RESTRICT
-  ON UPDATE RESTRICT
+      'title' VARCHAR,
+      'parent_field' VARCHAR,
+      PRIMARY KEY (title)
 )
 
-CREATE TABLE IF NOT EXISTS needs
+CREATE TABLE IF NOT EXISTS references
 (
-  jobID INT(4)
-  , antikeimTitle VARCHAR(36),
-  , PRIMARY KEY (jobID, antikeimTitle)
-  /* position reference */
-  , CONSTRAINT REFJOB
-  FOREIGN KEY (jobID)
-  REFERENCES job(ID_num)
-  ON DELETE CASCADE
-  ON UPDATE CASCADE
-  /* field reference */
-  , CONSTRAINT REFANTIKEIM
-  FOREIGN KEY (antikeimTitle)
-  REFERENCES antikeim(title)
-  ON DELETE CASCADE
-  ON UPDATE CASCADE
+      'position_ID' INT
+      , 'field_title' VARCHAR
+      , PRIMARY KEY (position_ID, field_title)
+      /* position reference */
+      , CONSTRAINT REFPOS
+      FOREIGN KEY (position_ID)
+      REFERENCES position(ID_num)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+      /* field reference */
+      , CONSTRAINT REFFIELD
+      FOREIGN KEY (field_title)
+      REFERENCES field(title)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
 )
 
+CREATE TABLE IF NOT EXISTS evaluations
+(
+      'employee' VARCHAR
+      , 'evaluator' VARCHAR
+      , 'interview_grade' INT(1) DEFAULT 0
+      , 'report_grade' INT(1) DEFAULT 0
+      , 'education_grade' INT(1) DEFAULT 0
+      , 'final_grade' INT(2) DEFAULT 0
 CREATE TABLE IF NOT EXISTS requestevaluation
 (
   emplUsername VARCHAR(12)
