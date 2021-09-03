@@ -4,15 +4,15 @@ USE staffEval
 
 CREATE TABLE IF NOT EXISTS companies
 (
-  afm char(9)
-  , doy VARCHAR(15)
+  AFM char(9)
+  , DOY VARCHAR(15)
   , name VARCHAR(35)
   , phone BIGINT(16)
   , street VARCHAR(15)  /*  di not use separate table for office location to avoID some unwanted complexity  */
   , num TINYINT(4)
   , city VARCHAR(15)
   , country VARCHAR(15)
-  , PRIMARY KEY(afm)
+  , PRIMARY KEY(AFM)
   , UNIQUE (manager)
   , CONSTRAINT CMPMNGR
 )
@@ -367,6 +367,22 @@ END$
 
 DELIMITER ;
 
+/********************************************************** ***********************************************/
+/* TRIGGERS */
+
+CREATE TRIGGER IF NOT EXISTS companyTrigger
+BEFORE UPDATE ON company
+FOR EACH ROW
+BEGIN
+  IF NEW.AFM != company.AFM OR NEW.DOY != company.DOY OR NEW.name != company.companyName
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Error: Not allowed to edit this field!'
+  END IF;
+END
+
+
+
+
 /* BEGIN STORED PROCEDURES FOR GUI */
 
 STORED PROCEDURE managerCompanyUpdate(IN managerName, IN companyName, IN newPhone, IN newStreet, IN newStreet_num, IN newCity, IN newCountry)
@@ -397,7 +413,7 @@ END
 STORED PROCEDURE managerSalaryUpdate (IN managerName, IN newSalary)
 BEGIN
   DECLARE @localAfm INT;
-  @afm = SELECT afm FROM companies WHERE manager = managerName;
+  @AFM = SELECT AFM FROM companies WHERE manager = managerName;
   UPDATE positions
    SET
     positions.salary = newSalary
