@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS logs
 )
 
 #BEGIN INSERT COMMANDS FOR DATABASE
-
+/*
 /*STORED PROCEDURES */
 
 /* 2nd PROCEDURE */
@@ -374,11 +374,14 @@ CREATE TRIGGER IF NOT EXISTS companyTrigger
 BEFORE UPDATE ON company
 FOR EACH ROW
 BEGIN
-  IF NEW.AFM != company.AFM OR NEW.DOY != company.DOY OR NEW.name != company.companyName
-    SIGNAL SQLSTATE '45000'
-    SET MESSAGE_TEXT = 'Error: Not allowed to edit this field!'
+  IF NEW.AFM != OLD.AFM THEN
+    SET NEW.AFM = OLD.AFM;
+  ELSEIF NEW.DOY != OLD.DOY THEN
+    SET NEW.DOY = OLD.DOY;
+  ELSEIF NEW.name != OLD.name THEN
+    SET NEW.name = OLD.name;
   END IF;
-END
+END;
 
 
 
@@ -427,3 +430,5 @@ BEGIN
   DECLARE
 
 END
+
+*/
