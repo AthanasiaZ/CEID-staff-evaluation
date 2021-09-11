@@ -89,7 +89,7 @@ VALUES
 (0003, '2021-03-03', 2100, 'visualization expert', 'THESSALONIKI', 'fotisz', '2020-12-03', '2021-02-30'),
 (0004, '2021-04-04', 1250, 'web programmer', 'PATRAS', 'elenitsa9', '2021-01-04', '2021-03-04'),
 (0005, '2021-05-05', 2000, 'AI expert', 'ATHENS', 'pelagiakou', '2021-02-05', '2021-04-05'),
-(0006, '2021-06-06', 1950, 'Algorithmic efficiency tester', 'pelagiakou', '2021-03-06', '2021-05-06')
+(0006, '2021-06-06', 1950, 'Algorithmic efficiency tester', 'ATHENS', 'pelagiakou', '2021-03-06', '2021-05-06')
 ;
 
 INSERT `CEID-Staff-Evaluation`.`antikeim` (`title`, `descr`, `parentField`)
