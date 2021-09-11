@@ -134,14 +134,14 @@ VALUES
 
 INSERT `CEID-Staff-Evaluation`.`evaluation` (`evaluationID`,`emplUsername`, `evalUsername`, `jobID`, `interviewGrade`, `reportGrade`, `recGrade`,`finalGrade`, `comments`, `completed`)
 VALUES
-(1, 'afroditimy', 'fotisz', 0001, 7, 8.5, 6.5, 7.5, 'Very Good', 'completed'),
-(2, 'afroditimy', 'pelagiakou', 0006, 4, 9, NULL, NULL, 'Not confident, great report', 'uncompleted'),
-(3, 'petrospap', 'fotisz', 0001, 10, 9, 9, 9.5, 'Excellent', 'completed'),
-(4, 'petrospap', 'elenitsa9', 0004, 9, 8, 9, 9, 'Excellent', 'completed'),
-(5, 'panagopoulosa', 'pelagiakou', 0005, NULL, NULL, NULL, NULL, NULL, 'uncompleted'),
-(6, 'panagopoulosa', 'fotisz', 0002, 3, 4, 3, 3.5, 'Rude and incompetent', 'completed'),
-(7, 'panagopoulosa', 'fotiz', 0003, 8, 9, 9, 9, 'Surprisingly great', 'completed'),
-(8, 'matinaakrivi', 'pelagiakou', 0005, 7, 8, 9, 8, 'Great', 'completed')
+(1, 'afroditimy', 'fotisz', 0001, 7, 8.5, 6.5, 7.5, 'Very Good', 1),
+(2, 'afroditimy', 'pelagiakou', 0006, 4, 9, NULL, NULL, 'Not confident, great report', 0),
+(3, 'petrospap', 'fotisz', 0001, 10, 9, 9, 9.5, 'Excellent', 1),
+(4, 'petrospap', 'elenitsa9', 0004, 9, 8, 9, 9, 'Excellent', 1),
+(5, 'panagopoulosa', 'pelagiakou', 0005, NULL, NULL, NULL, NULL, NULL, 0),
+(6, 'panagopoulosa', 'fotisz', 0002, 3, 4, 3, 3.5, 'Rude and incompetent', 1),
+(7, 'panagopoulosa', 'fotiz', 0003, 8, 9, 9, 9, 'Surprisingly great', 1),
+(8, 'matinaakrivi', 'pelagiakou', 0005, 7, 8, 9, 8, 'Great', 1)
 ;
 
 INSERT `CEID-Staff-Evaluation`.`languages` (`employee`, `language`)
