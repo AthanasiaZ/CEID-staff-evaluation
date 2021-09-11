@@ -331,7 +331,7 @@ select count(grade) into grades
 from evaluationresult where job_ID = jobID;
 
 IF (users = 0) THEN
-SELECT "There are not any candIDates for this job";
+SELECT "There are not any candidates for this job";
 
 ELSE
 
