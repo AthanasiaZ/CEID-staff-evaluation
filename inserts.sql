@@ -1,7 +1,7 @@
-INSERT `CEID-Staff-Evaluation`.`company` (`AFM`, `DOY`, `name`, `phone`, `street'`, `num`, `city`, `country`)
+INSERT `CEID-Staff-Evaluation`.`company` (`AFM`, `DOY`, `name`, `phone`, `street`, `num`, `city`, `country`)
 VALUES
 ('123456789', 'PYRGOU', 'Vassae', 2621012345, 'MANOLOPOULOU', 32, 'PYRGOS', 'GREECE'),
-('012345345', 'A PATRON', 'Citrix', 2610123456, 'KONSTANTINOUPOLEOS', 27, 'PATRAS', 'GREECE'),
+('012345345', 'A PATRON', 'Citrix', 2610123456, 'MIAOULI', 27, 'PATRAS', 'GREECE'),
 ('901234567', 'B XOLARGOU', 'Accenture', 2101234567, 'ZAKYNTHOU', 101, 'ATHENS', 'GREECE'),
 ('555554444', 'D THESSALONIKIS', 'TaskUs', 2310123456, 'ATTIKIS', 06, 'THESSALONIKI', 'GREECE')
 ;
@@ -21,9 +21,9 @@ VALUES
 
 /*employees*/
 ('afroditimy', 'denksexno', 'Afroditi', 'Milou', '2015-01-01 20:20:03', 'afroditi0603@gmail.com'),
-('petrospap', 'spongebobsquarepants', 'Petros', 'Papadis', '2015-02-03 17:02:44', 'petrakos@hotmail.com'),
-('panagopoulosa', '123456789pa', 'Aristeidis', 'Panagopoulos', '2016-04-27 12:35:36', 'panagopoulosaris@yahoo.com'),
-('matinaakrivi', 'PastitsiO12', 'Stamatia', 'Akrivi', '2012-01-17 09:03:12', 'matinaakrivi93@gmail.com')
+('petrospap', 'spongebob', 'Petros', 'Papadis', '2015-02-03 17:02:44', 'petrakos@hotmail.com'),
+('apanag', '123456789pa', 'Aristeidis', 'Panagopoulos', '2016-04-27 12:35:36', 'panagopoulosaris@yahoo.com'),
+('matinaakrivi', 'PastitsiO12', 'Stamatia', 'Akrivi', '2012-01-17 09:03:12', 'matinaakrivi93@gmail.com'),
 
 /*admin*/
 ('xrysavellou', '14sept1991x', 'Xrisopigi', 'Vellou', '2013-03-19 10:10:05', 'xrysavellou@gmail.com')
@@ -45,10 +45,10 @@ VALUES
 
 INSERT `CEID-Staff-Evaluation`.`employee` (`username`, `firm`, `resume`, `sistatikes`, `certificates`, `awards`)
 VALUES
-('afroditimy', '555554444', 'Afroditi is a certified IT project manager and CISCO security expert', 'RecommendationsMilou.pdf', 'CertificatesMilou.pdf', 'AwardsMilou.pdf'),
-('petrospap', '901234567', 'Petros has worked as a web developer for the last 12 years', 'RecommendationsPapadis.pdf', 'CertificatesPapadis.pdf', 'AwardsPapadis.pdf'),
-('panagopoulosa', '123456789', 'Aristeidis holds a diploma in Computer Engineering and Informatics and has a long work experience in Robotics', 'RecommendationsPanagopoulos', 'CertificatesPanagopoulos', 'AwardsPanagopoulos'),
-('matinaakrivi', '123456789', 'Stamatia has a strong background in Algorithms and Data Structures', 'RecommendationsAkrivi.pdf', 'CertificatesAkrivi.pdf', 'AwardsAkrivi.pdf')
+('afroditimy', '555554444', 'CVMilou.pdf', 'RecommendationsMilou.pdf', 'CertificatesMilou.pdf', 'AwardsMilou.pdf'),
+('petrospap', '901234567', 'CVPapadis.pdf', 'RecommendationsPapadis.pdf', 'CertificatesPapadis.pdf', 'AwardsPapadis.pdf'),
+('apanag', '123456789', 'CVPanagopoulos.pdf', 'RecommendationsPanagopoulos.pdf', 'CertificatesPanagopoulos.pdf', 'AwardsPanagopoulos.pdf'),
+('matinaakrivi', '123456789', 'CVAkrivi.pdf', 'RecommendationsAkrivi.pdf', 'CertificatesAkrivi.pdf', 'AwardsAkrivi.pdf')
 ;
 
 INSERT `CEID-Staff-Evaluation`.`degree` (`title`, `institution`, `bathmida`)
@@ -62,9 +62,9 @@ VALUES
 
 INSERT `CEID-Staff-Evaluation`.`has_degree` (`title`, `institution`, `emplUsername`, `etos`,  `grade`)
 VALUES
-('Computer Engineering and Informatics', 'University of Patras', 'panagopoulosa', 2009, 7.6),
+('Computer Engineering and Informatics', 'University of Patras', 'apanag', 2009, 7.6),
 ('Dynamic Programming, Greedy Algorithms', 'University of Colorado', 'matinaakrivi', 2004, 8),
-('Computer Vision and Modelling', 'Princeton University', 'panagopoulosa', 2011, 8.2)
+('Computer Vision and Modelling', 'Princeton University', 'apanag', 2011, 8.2),
 ('Lyceum certificate', '1st Lyceum of Patras', 'petrospap', 2013, 19.3),
 ('High Efficiency Algorithms', 'University of Patras', 'matinaakrivi', 2007, 8.3),
 ('Computer Engineering and Informatics', 'University of Patras', 'afroditimy', 2012, 6.9)
@@ -76,20 +76,20 @@ VALUES
 ('afroditimy', 'Secure VPN access for remote workers', 'https://github.com/afroditimy/AnyConnect'),
 ('petrospap', 'Application Programming Inteface connection to random website', 'https://github.com/petrospap/APIrandom'),
 ('petrospap',  'SQL based Crud Web Application', 'https://github.com/petrospap/CRUDrandom'),
-('panagopoulosa', 'Holistic Platform Design for Smart Buildings of the Future Internet', 'https://github.com/panagopoulosa/hobnet'),
-('panagopoulosa', 'Research extending IoT testbed for multidisciplinary experiments', 'https://github.com/panagopoulosa/IoT'),
-('panagopoulosa', 'Crowd-sourcing based privacy protection for web applications', 'https://github.com/panagopoulosa/randomPrivacysetup'),
+('apanag', 'Holistic Platform Design for Smart Buildings of the Future Internet', 'https://github.com/apanag/hobnet'),
+('apanag', 'Research extending IoT testbed for multidisciplinary experiments', 'https://github.com/apanag/IoT'),
+('apanag', 'Crowd-sourcing based privacy protection for web applications', 'https://github.com/apanag/randomPrivacysetup'),
 ('matinaakrivi', 'Population-Based Optimization Algorithms', 'https://github.com/matinaakrivi/stuff')
 ;
 
 INSERT `CEID-Staff-Evaluation`.`job` (`ID`,  `startDate`, `salary` , `position`, `edra`, `evaluator`, `announcement_date`, `expiration_date`)
 VALUES
-(0001, '2021-01-01', 1400, 'web programmer', 'THESSALONIKI', 'fotisz', '2020-10-01', '2020-12-30'),
-(0002, '2021-02-02', 1800, 'graphics designer', 'THESSALONIKI', 'fotisz', '2020-11-02', '2021-01-30'),
-(0003, '2021-03-03', 2100, 'visualization expert', 'THESSALONIKI', 'fotisz', '2020-12-03', '2021-02-30'),
-(0004, '2021-04-04', 1250, 'web programmer', 'PATRAS', 'elenitsa9', '2021-01-04', '2021-03-04'),
-(0005, '2021-05-05', 2000, 'AI expert', 'ATHENS', 'pelagiakou', '2021-02-05', '2021-04-05'),
-(0006, '2021-06-06', 1950, 'Algorithmic efficiency tester', 'ATHENS', 'pelagiakou', '2021-03-06', '2021-05-06')
+(0001, '2021-01-01', 1400, 'web programmer', '555554444', 'fotisz', '2020-10-01', '2020-12-30'),
+(0002, '2021-02-02', 1800, 'graphics designer', '555554444', 'fotisz', '2020-11-02', '2021-01-30'),
+(0003, '2021-03-03', 2100, 'visualization expert', '555554444', 'fotisz', '2020-12-03', '2021-02-30'),
+(0004, '2021-04-04', 1250, 'web programmer', '012345345', 'elenitsa9', '2021-01-04', '2021-03-04'),
+(0005, '2021-05-05', 2000, 'AI expert', '901234567', 'pelagiakou', '2021-02-05', '2021-04-05'),
+(0006, '2021-06-06', 1950, 'Algorithmic efficiency tester', '901234567' , 'pelagiakou', '2021-03-06', '2021-05-06')
 ;
 
 INSERT `CEID-Staff-Evaluation`.`antikeim` (`title`, `descr`, `parentField`)
@@ -126,28 +126,28 @@ VALUES
 ('afroditimy', 0006),
 ('petrospap', 0001),
 ('petrospap', 0004),
-('panagopoulosa', 0005),
-('panagopoulosa', 0002),
-('panagopoulosa', 0003),
+('apanag', 0005),
+('apanag', 0002),
+('apanag', 0003),
 ('matinaakrivi', 0005)
 ;
 
 INSERT `CEID-Staff-Evaluation`.`evaluation` (`evaluationID`,`emplUsername`, `evalUsername`, `jobID`, `interviewGrade`, `reportGrade`, `recGrade`,`finalGrade`, `comments`, `completed`)
 VALUES
-(1, 'afroditimy', 'fotisz', 0001, 3, 4, 1, 8, 'Very Good', 1),
-(2, 'afroditimy', 'pelagiakou', 0006, 1, 3.5, NULL, NULL, 'Not confident, great report', 0),
-(3, 'petrospap', 'fotisz', 0001, 4, 4, 1, 9, 'Excellent', 1),
-(4, 'petrospap', 'elenitsa9', 0004, 4, 3, 2, 9, 'Excellent', 1),
-(5, 'panagopoulosa', 'pelagiakou', 0005, NULL, NULL, NULL, NULL, NULL, 0),
-(6, 'panagopoulosa', 'fotisz', 0002, 1, 2, 1, 4, 'Rude and incompetent', 1),
-(7, 'panagopoulosa', 'fotiz', 0003, 3, 4, 2, 9, 'Surprisingly great', 1),
-(8, 'matinaakrivi', 'pelagiakou', 0005, 3, 3, 2, 8, 'Very Good', 1)
+(1, 'afroditimy', 'fotisz', 0001, 7, 8.5, 6.5, 7.5, 'Very Good', 1),
+(2, 'afroditimy', 'pelagiakou', 0006, 4, 9, NULL, NULL, 'Not confident, great report', 0),
+(3, 'petrospap', 'fotisz', 0001, 10, 9, 9, 9.5, 'Excellent', 1),
+(4, 'petrospap', 'elenitsa9', 0004, 9, 8, 9, 9, 'Excellent', 1),
+(5, 'apanag', 'pelagiakou', 0005, NULL, NULL, NULL, NULL, NULL, 0),
+(6, 'apanag', 'fotisz', 0002, 3, 4, 3, 3.5, 'Rude and incompetent', 1),
+(7, 'apanag', 'fotiz', 0003, 8, 9, 9, 9, 'Surprisingly great', 1),
+(8, 'matinaakrivi', 'pelagiakou', 0005, 7, 8, 9, 8, 'Great', 1)
 ;
 
 INSERT `CEID-Staff-Evaluation`.`languages` (`employee`, `language`)
 VALUES
 ('afroditimy', 'EN, FR, GR'),
 ('petrospap', 'EN, GR'),
-('panagopoulosa', 'EN, SP, GR'),
+('apanag', 'EN, SP, GR'),
 ('matinaakrivi', 'EN, RU, GR')
 ;
